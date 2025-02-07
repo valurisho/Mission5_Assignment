@@ -1,6 +1,28 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "My Services";
 }
+<div class="container">
 <h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<form id="rateForm">
+    <label for="hours">Enter number of hours:</label>
+    <input type="number" id="hours" name="hours" min="1" required>
+    <br/><br/>
+    <label>Base Rate: 15$ per hour (Changes depending on type of photography)</label><br/>
+    <label for="photographyType">Select photography version:</label>
+    <select id="photographyType" name="photographyType">
+        <option value="iphone">iPhone Photography</option>
+        <option value="film">Film Photography</option>
+        <option value="digital">Digital Photography</option>
+    </select>
+    <br/><br/>
+
+    <button type="button" onclick="multiplyValue()">Calculate Rate </button>
+    <button type="button" id="clearButton" onclick="clearInput()" hidden="hidden">Clear </button>
+</form> <br/>
+<script src="js/site.js"></script>
+
+    <div class="rate-container">
+        Your rate is: <div class="rate" id="rateDisplay">0</div>
+    </div>
+</div>
